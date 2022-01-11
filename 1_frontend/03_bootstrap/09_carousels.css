@@ -1,0 +1,18 @@
+.carousel-item{
+    height: 10rem;
+
+}
+
+/* testimonials section */
+#testimonials{
+    padding: 7% 15%;
+    text-align: center;
+    background-color: #ef8172;
+    color: white;
+}
+
+.dog-image{
+    width: 10%;
+     border-radius:100% ;       /*100%; to make the image round */
+     margin:1rem;
+}

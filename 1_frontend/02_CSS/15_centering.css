@@ -1,0 +1,12 @@
+/* to center it we can use the ceter tag inside the body element
+or we can set the margin to 0 auto 0 auto along with the width to center the text*/
+
+body{
+    background-color: aqua;
+     text-align: center; 
+}
+
+h1{
+    width: 10px;
+    margin: 0 auto ;
+}

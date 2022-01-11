@@ -1,0 +1,20 @@
+/*
+if you have more than on eproperty in css
+the best practice is to list them in alphabetical order
+*/
+
+body {
+    background-color: blueviolet;
+}
+
+h1{
+    color:azure;
+    font-size: larger;
+}
+
+img{
+    background-color: bisque;
+    height: 200px;
+    width: 200px;
+    
+}

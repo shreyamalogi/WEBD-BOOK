@@ -1,0 +1,41 @@
+
+
+/* make use of the display property instead of margins */
+
+body{
+    background-color: chartreuse;
+}
+
+.top-container{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    left: 400px;
+    
+}
+
+.middle-container{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    right: 200px;
+   
+ 
+    
+}
+
+.bottom-container{
+    background-color:yellow;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    right: 200px;
+   
+    
+  
+}

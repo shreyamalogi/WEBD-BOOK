@@ -1,0 +1,45 @@
+/* tag selectors */
+
+body {
+    background-color: blueviolet;
+}
+
+h1{
+    color:azure;
+    font-size: larger;
+}
+
+/* img{                             //we cant use this because it selects all the images css properties
+    background-color: bisque;
+    height: 200px;
+    width: 200px;
+    
+} */
+
+
+
+
+
+/* class selectors */
+
+
+
+/* to target a class we use a dot . in front */
+.apple{
+    background-color: burlywood;
+}
+
+.mango{
+    background-color: cadetblue;
+}
+
+
+/* id selectors */
+
+
+/* use a hashtag to define an id */
+
+#heading{
+    color:yellowgreen;
+
+}

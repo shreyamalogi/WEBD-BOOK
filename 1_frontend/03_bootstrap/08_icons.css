@@ -1,0 +1,14 @@
+body{
+    background-color: pink;
+}
+
+/* to change the color of the icon we add custom class */
+.cap-icon{
+    color: crimson;
+}
+
+
+/* to hover over an icon and change the color we use pseudo class :hover */
+.cap-icon:hover{
+    color: blueviolet;
+}

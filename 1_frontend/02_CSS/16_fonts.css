@@ -1,0 +1,29 @@
+/* copy the embedded css code in google fonts and paste it here
+
+note: 16px = 100% = 1em
+for dynamic sizing use em
+
+if we added em in parent class like body as we as a different
+em in child class like h1 then addition takes place
+both the em will add up
+
+the same applies to percentages %
+
+in css3 we have rem (root em) which ignores all the parent settings
+so better to use rem all the time instead of % or px or em
+*/
+
+body{
+    background-color: aqua;
+    font-size: 2em;
+    font-family: 'Merriweather', serif;
+
+}
+
+h1{
+     font-size: 3em;         /*a total of 5em will be added to the webpage */
+}
+
+h2{
+     font-size: 1rem;     /*only 1em will be applied ignoring the em specified in the bodys */
+}

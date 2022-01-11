@@ -1,0 +1,79 @@
+<!--responsiveness using grid layout
+    https://getbootstrap.com/docs/4.0/layout/grid/#responsive-classes
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsiveness</title>
+    <!--cdn-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+    
+    <!--to make a website like ait bnb where the images are 
+    responsive according to the viewport we use a
+    
+    div class "row"
+    col-md-6......total(12 units)-
+
+    -->
+
+    <!-- 
+        <div class="row">
+        <div class="col-sm-6">col-sm-8</div>
+        <div class="col-sm-6">col-sm-4</div>
+      </div>
+    
+        syntax
+        <div class = "column type" style="">
+            column text
+        </div> 
+    
+        css lo {} lekapothe = and "" pettali
+
+        for screens
+        lg=large sm=small md=medium
+    -->
+
+<body>
+      <div class="row">
+        <div class="col-lg-3" style = "background-color: blueviolet;"    >
+        col1
+      </div>
+        <div class="col-lg-3" style="background-color: chartreuse;">
+            col2</div>
+        <div class="col-lg-3" style="background-color: crimson;">
+            col3</div>
+        <div class="col-lg-3" style="background-color: darkorange;">
+            col4</div>
+      </div>
+
+
+<br>
+
+<!--get 6 coloumns on desktop, 4 on tablet 1 in mobile
+so we need to divide each of the viewport size/12-->
+      <div class="row">
+        <div class="col-lg-2" style = "background-color: blueviolet;"    >
+        col1
+      </div>
+        <div class="col-lg-2 col-md-3 col-sm-12 " style="background-color: chartreuse;">
+            col2</div>
+        <div class="col-lg-2 col-md-3 col-sm-12" style="background-color: crimson;">
+            col3</div>
+        <div class="col-lg-2 col-md-3 col-sm-12" style="background-color: darkorange;">
+            col4</div>
+        <div class="col-lg-2 col-md-3 col-sm-12" style="background-color: rgb(221, 50, 184);">
+            col5</div>
+        <div class="col-lg-2 col-md-3 col-sm-12" style="background-color: rgb(179, 237, 245);">
+            col6</div>
+      </div>
+</body>
+</html>

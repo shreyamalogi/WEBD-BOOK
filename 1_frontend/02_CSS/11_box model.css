@@ -1,0 +1,40 @@
+/* dont add space in naming the classes
+DONT USE COLOR PROPERTY BUT INSTEAD USE BACKGROUND COLOR PROPERTY
+ margin pushes other divs
+ padding adds space only to the content inside it
+ border adds border (it has two values)
+ backgroud color
+
+
+ to touch edge to eage open chrome dev tools and calculate the whole padding box to the left
+
+*/
+
+body{
+    background-color: chartreuse;
+}
+
+.top-container{
+    background-color: blueviolet;
+    height: 200px;
+    width: 200px;
+    border: solid 10px;
+    padding: 20px;
+}
+
+.middle-container{
+    background-color: chocolate;
+    height: 200px;
+    width: 200px;
+    border: solid 20px;
+    margin-left: 260px;
+    
+}
+
+.bottom-container{
+    background-color:crimson;
+    height: 200px;
+    width: 200px;
+    border: solid 10px;
+    margin-left: 500px;
+}

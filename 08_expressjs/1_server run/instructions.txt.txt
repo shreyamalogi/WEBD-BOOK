@@ -1,0 +1,7 @@
+to run the server, 
+$ npm init
+then we see a folder package.lock.json
+$ npm i express
+then we see package.json and node_modules
+
+I am not pushing these to github as the files are long

@@ -1,0 +1,39 @@
+!<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  </head>
+
+   
+
+
+
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/submit" method='post'>
+  <label for="Science">Science:</label><br>
+  <input type="text" id="science" name="science" value="0"><br>
+  <label for="Maths">Maths:</label><br>
+  <input type="text" id="maths" name="maths" value="0"><br><br>
+  <label for="C ">C:</label><br>
+  <input type="text" id="c" name="c" value="0"><br><br>
+  <label for="datascience">Data Science:</label><br>
+  <input type="text" id="datascience" name="datascience" value="0"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/submit".</p>
+
+</body>
+</html>

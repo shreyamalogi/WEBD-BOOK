@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "one-liner-joke": "^1.2.2",
+    "yourmama": "^1.0.5"
+  }
+}

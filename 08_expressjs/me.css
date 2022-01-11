@@ -1,5 +1,0 @@
-##even if we add css and run node app.js it wont work becoz express is not a template supporter so when we run index.html it works but not as flask or ejs
-
-body {
-    background-image: url(https://designmodo.com/wp-content/uploads/2017/08/gradient-1.jpg);
-}

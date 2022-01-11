@@ -1,0 +1,41 @@
+<!--
+
+responding to requests with html files 
+
+once head over to express docs 
+http://expressjs.com/en/5x/api.html#res
+
+when we are using res.send method we are seperately sending indiviaual bits o html data 
+but if we want to send the whole index.html we use res.sendFile("index.html") to render the template 
+
+but what if its deployed or hosted in someonelese server 
+ so we make a constant and append it i.e __dirname + "/index.html" [this full path will look like C:\Users\Shre9\Calculator-app\index.html]
+ so our html page gets rendered  
+
+ now after ruuning and we click view page source all the html will b showed but the logic will be hidden
+
+
+
+
+
+
+
+-->
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="me.css">
+</head>
+<body>
+<h1>Calculator</h1>    
+   <form class = "input" action="/" method="post"> <!--we are sending all this inputed data to our home route-->
+       <input type="text" name="n1" placeholder="First Number"> <!--here name acts like a variable-->
+       <input type="text" name="n2" placeholder="Second Number">
+       <button type="submit" name="submit">Calculate</button>
+   </form>
+    
+</body>
+</html>

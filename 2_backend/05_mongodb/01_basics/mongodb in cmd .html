@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi mongodb</h1>
+    <!--
+        Microsoft Windows [Version 10.0.18363.1556]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Shre9>mongo
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("636b3a34-f56c-4cdf-870d-641e2b6bd55c") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2022-01-21T00:18:17.451+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-01-21T00:18:17.456+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+// got stuck?
+> help
+        db.help()                    help on db methods
+        db.mycoll.help()             help on collection methods
+        sh.help()                    sharding helpers
+        rs.help()                    replica set helpers
+        help admin                   administrative help
+        help connect                 connecting to a db help
+        help keys                    key shortcuts
+        help misc                    misc things to know
+        help mr                      mapreduce
+
+        show dbs                     show database names
+        show collections             show collections in current database
+        show users                   show users in current database
+        show profile                 show most recent system.profile entries with time >= 1ms
+        show logs                    show the accessible logger names
+        show log [name]              prints out the last segment of log in memory, 'global' is default
+        use <db_name>                set current database
+        db.mycoll.find()             list objects in collection mycoll
+        db.mycoll.find( { a : 1 } )  list objects in mycoll where a == 1
+        it                           result of the last line evaluated; use to further iterate
+        DBQuery.shellBatchSize = x   set default number of items to display on shell
+        exit                         quit the mongo shell
+
+//show databases, by default they are 3
+> show dbs
+admin
+config
+local
+
+//CREATE a db 
+> use shopDB
+switched to db shopDB
+
+//to know the currect db in which u are working on
+> db
+shopDB
+
+//CREATing a collection and INSERTing 
+> db.products.insertOne({})                                                 //keyvalue pairs
+
+uncaught exception: Error: error doing query: failed: 
+network error while attempting to run command 
+'insert' on host '127.0.0.1:27017'  :
+DB.prototype.runCommand@src/mongo/shell/db.js:177:19
+DBCollection.prototype._dbCommand@src/mongo/shell/collection.js:174:16
+executeBatch@src/mongo/shell/bulk_api.js:933:22
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1182:21
+DBCollection.prototype.insertOne@src/mongo/shell/crud_api.js:264:9
+@(shell):1:1
+
+
+> db.products.insertOne({_id: 1, name: "pen", price: 1.20})                 //it shows error cuz we must run the mongod server
+
+Error: socket exception [CONNECT_ERROR] server 
+[couldn't connect to server 127.0.0.1:27017, connection 
+attempt failed: SocketException: Error connecting to 127.0.0.1:27017
+ :: caused by :: No connection could be made because the
+target machine actively refused it.] :
+runClientFunctionWithRetries@src/mongo/shell/session.js:371:27
+runCommand@src/mongo/shell/session.js:466:25
+DB.prototype._runCommandImpl@src/mongo/shell/db.js:155:12
+DB.prototype.runCommand@src/mongo/shell/db.js:170:16
+DBCollection.prototype._dbCommand@src/mongo/shell/collection.js:174:16
+executeBatch@src/mongo/shell/bulk_api.js:933:22
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1182:21
+DBCollection.prototype.insertOne@src/mongo/shell/crud_api.js:264:9
+@(shell):1:1
+
+
+> db
+shopDB
+
+//inserting a record
+> db.products.insertOne({_id:1, name:"pen", price: 1.20})
+{ "acknowledged" : true, "insertedId" : 1 }
+
+//collections are like tables in sql
+> show collections
+products
+
+
+> db.product.insertOne({_id:2, name:"pencil", price:0.80})
+{ "acknowledged" : true, "insertedId" : 2 }
+
+
+> show collections
+product
+products
+
+
+> db.products.insertOne({_id:2, name:"pencil", price:0.80})
+{ "acknowledged" : true, "insertedId" : 2 }
+
+
+> show collections
+product
+products
+
+//READing all records
+> db.products.find()
+{ "_id" : 1, "name" : "pen", "price" : 1.2 }
+{ "_id" : 2, "name" : "pencil", "price" : 0.8 }
+
+//READing a record with a query
+> db.products.find({name: "pencil"})
+{ "_id" : 2, "name" : "pencil", "price" : 0.8 }
+
+//READing a field named price which is greater than 1
+> db.products.find({price: {$gt: 1} })
+{ "_id" : 1, "name" : "pen", "price" : 1.2 }
+
+
+> db.products.find({_id:1,})
+{ "_id" : 1, "name" : "pen", "price" : 1.2 }
+
+//READing a record with 2 parameters ie query and projections (projection has a boolean value)
+> db.products.find({_id:1},{name:1})
+{ "_id" : 1, "name" : "pen" }
+
+
+> db.products.find({_id:1},{name:1,_id:0})
+{ "name" : "pen" }
+
+//DELETE
+> db.product.deleteOne()
+uncaught exception: Error: find() requires query criteria :
+Bulk/this.find@src/mongo/shell/bulk_api.js:804:23
+DBCollection.prototype.deleteOne@src/mongo/shell/crud_api.js:363:20
+@(shell):1:1
+
+//DELETE a collection
+> db.product.drop()
+true
+
+
+> db
+shopDB
+
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+shopDB  0.000GB
+
+
+> show collections
+products
+
+//DELETE a record 
+> db.products.deleteOne({_id:2})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+
+>
+
+
+
+
+    -->
+</body>
+</html>

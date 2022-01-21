@@ -209,6 +209,7 @@ const pineapple = new fruit({
 });
 
 //savingpineapple.save();
+//.....
 
 //new person to our docs
 const personRecord = new person({

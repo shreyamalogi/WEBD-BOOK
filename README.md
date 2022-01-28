@@ -1,2 +1,2 @@
 # web
-📘Chapter - 10 📘 Learn the full stack web development
+📘Chapter - 10 📘 Learn the full stack web development.
